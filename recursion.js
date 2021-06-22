@@ -34,3 +34,42 @@ function findGreatest(arr) {
 };
 
 console.log(findGreatest(testArr));
+
+
+//max DOM node depth OR divEl.children.length
+
+const treeDepth = (divEl, currentLevel) => {
+  if (divEl.children.length === 0) return currentLevel;
+
+  currentLevel += 1;
+  let maxDepth = currentLevel;
+  Array.from(divel.children).forEach(element => {
+    maxDepth = Math.max(treeDepth(element, currentLevel), maxDepth)
+  });
+
+  return maxDepth;
+}
+
+
+
+function likes(array) {
+  const arrayLength = array.length
+  console.log(arrayLength)
+  
+  switch (arrayLength) {
+    case arrayLength === 1:
+      return `${array[0]} likes this`
+    case arrayLength === 2:
+      return `${array[0]} and ${array[1]} likes this`
+    case arrayLength === 3:
+      return `${array[0]}, ${array[1]} and ${array[2]} likes this`
+    default:
+      return 'no one likes this'
+  }
+}
+
+console.log(likes([]))
+console.log(likes(['Peter']))
+console.log(likes(["Jacob", "Alex"]))
+console.log(likes(["Max", "John", "Mark"]))
+console.log(likes(["Alex", "Jacob", "Mark", "Max"]))

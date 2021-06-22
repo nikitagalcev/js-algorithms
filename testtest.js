@@ -19,33 +19,30 @@ const nodes = {
 
 const node = 5;
 
-function findNode(nodes, node) {
+function findNode(nodeses, node) {
   const objectArr = [];
-  let current = nodes.node;
- 
+  objectArr.push(nodeses)
+  let current = objectArr.pop()
+  
   while (current) {
     if (current.node === node) {
       return current;
     }
-    
     if (current.left) {
       objectArr.push(current.left)
     }
-    
     if (current.right) {
       objectArr.push(current.right)
     }
     
     if (objectArr.length > 0) {
-     current = objectArr.pop(); 
+      current = objectArr.pop()
     }
   }
-  
-  return current
+  return current.node
 }
 
 console.log(findNode(nodes, node))
-
 
 
 
